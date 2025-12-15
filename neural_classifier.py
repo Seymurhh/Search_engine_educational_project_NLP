@@ -16,8 +16,6 @@ class TopicClassifier:
 
     def _build_model(self):
         """
-        Builds a simple Feed-Forward Neural Network.
-        Uses explicit tf.keras to avoid Keras 2/3 conflicts.
         """
         # Use explicit tf.keras to ensure consistency
         model = tf.keras.Sequential([
