@@ -19,19 +19,18 @@ class SemanticSearch:
         
     @st.cache_resource
     def _load_summarizer(_self):
-        # Use a lightweight summarization model
         return pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
     @st.cache_data
     def encode_papers(_self, papers_text):
         """
-        Encodes a list of paper texts (e.g., abstracts) into embeddings.
+        encodes a list of paper texts (e.g., abstracts) into embeddings.
         """
         return _self.model.encode(papers_text, convert_to_tensor=True)
 
     def search(self, query, paper_embeddings, papers_df, top_k=5):
         """
-        Searches for the most relevant papers given a query.
+        here searches for the most relevant papers given a query.
         """
         query_embedding = self.model.encode(query, convert_to_tensor=True)
         
@@ -58,13 +57,7 @@ class SemanticSearch:
         """
         Finds similar papers to the one at paper_index.
         """
-        # Assuming 'papers' is a list of paper objects/dicts, and paper_embeddings
-        # has been pre-computed and stored in self.paper_embeddings
         if self.paper_embeddings is None:
-            # This case should ideally be handled by ensuring encode_papers is called first
-            # or by passing the embeddings directly. For now, we'll assume papers_text
-            # can be derived or passed if needed, or that self.paper_embeddings is set.
-            # For this specific method, we need the embeddings to be present.
             raise ValueError("Paper embeddings have not been computed. Call encode_papers first.")
             
         # Get the embedding of the target paper
