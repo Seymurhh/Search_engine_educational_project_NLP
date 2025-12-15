@@ -19,7 +19,7 @@ class SemanticSearch:
         
     @st.cache_resource
     def _load_summarizer(_self):
-        # Use a lightweight summarization model
+        # lightweight summarization model
         return pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
     @st.cache_data
@@ -58,16 +58,12 @@ class SemanticSearch:
         """
         Finds similar papers to the one at paper_index.
         """
-        # Assuming 'papers' is a list of paper objects/dicts, and paper_embeddings
+        # 'papers' is a list of paper objects/dicts, and paper_embeddings
         # has been pre-computed and stored in self.paper_embeddings
         if self.paper_embeddings is None:
-            # This case should ideally be handled by ensuring encode_papers is called first
-            # or by passing the embeddings directly. For now, we'll assume papers_text
-            # can be derived or passed if needed, or that self.paper_embeddings is set.
-            # For this specific method, we need the embeddings to be present.
             raise ValueError("Paper embeddings have not been computed. Call encode_papers first.")
             
-        # Get the embedding of the target paper
+        # the embedding of the target paper
         target_embedding = self.paper_embeddings[paper_index]
         
         # Compute cosine similarity with all papers
