@@ -1,0 +1,14 @@
+arxiv
+pandas
+numpy
+scikit-learn
+matplotlib
+nltk
+gensim>=4.4.0
+pyLDAvis
+wordcloud
+seaborn
+streamlit
+sentence-transformers
+plotly
+tensorflow
