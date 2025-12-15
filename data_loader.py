@@ -33,7 +33,6 @@ def fetch_arxiv_papers(query="cat:cs.RO OR cat:cs.AI", max_results=100):
     Fetches papers from arXiv based on the query.
     """
     print(f"Fetching up to {max_results} papers for query: {query}...")
-    # Configure client with delay to respect rate limits
     client = arxiv.Client(
         page_size=100,
         delay_seconds=3,
@@ -75,7 +74,7 @@ def preprocess_text(text):
     
     # Remove stopwords
     stop_words = set(stopwords.words('english'))
-    # Add domain specific stopwords
+    # domain specific stopwords
     custom_stops = {'paper', 'method', 'result', 'proposed', 'approach', 'algorithm', 'model', 'system', 'using', 'based', 'show', 'study', 'new'}
     stop_words.update(custom_stops)
     
@@ -103,9 +102,6 @@ def save_to_csv(df, filepath="arxiv_dataset.csv"):
     Saves the dataframe to a CSV file.
     """
     if os.path.exists(filepath):
-        # Append if exists (optional, but for now let's overwrite or handle duplicates)
-        # For simplicity in this project, we will overwrite or load-then-append
-        # Let's just overwrite for the "current session" dataset
         df.to_csv(filepath, index=False)
     else:
         df.to_csv(filepath, index=False)
