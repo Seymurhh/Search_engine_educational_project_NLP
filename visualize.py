@@ -9,7 +9,7 @@ import numpy as np
 
 def visualize_topics_interactive(lda_model, corpus, dictionary, filepath="lda_visualization.html"):
     """
-    Creates an interactive visualization using pyLDAvis and saves it to a file.
+    Creates an interactive visualization using pyLDAvis e
     """
     print("Generating interactive visualization...")
     vis_data = gensimvis.prepare(lda_model, corpus, dictionary)
