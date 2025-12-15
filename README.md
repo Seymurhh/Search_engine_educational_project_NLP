@@ -1,9 +1,5 @@
 # Building a Search Engine for Educational Content
 
-**CSCI S-89B Introduction to Natural Language Processing - Final Project**
-
-Seymur Hasanov | Harvard Extension School | Fall 2025
-
 ## Overview
 
 An intelligent search engine for academic research papers featuring:
@@ -13,11 +9,7 @@ An intelligent search engine for academic research papers featuring:
 
 ## Quick Start (Google Colab)
 
-1. Open Google Colab
-2. Upload the files from this repository
-3. Run `Colab_Setup.py` as a notebook
-
-Or clone this repo in Colab:
+Clone this repo in Colab:
 ```python
 !git clone https://github.com/Seymurhh/Search_engine_educational_project_NLP.git
 %cd Search_engine_educational_project_NLP
@@ -34,7 +26,7 @@ Or clone this repo in Colab:
 | `neural_classifier.py` | Keras neural network classifier |
 | `visualize.py` | Visualizations (pyLDAvis, charts) |
 | `arxiv_dataset.csv` | Cached dataset (500 papers) |
-| `Colab_Setup.py` | Ready-to-run Colab notebook |
+| `Colab_Setup.py` | colab notebook |
 
 ## Installation (Local)
 
@@ -49,3 +41,4 @@ streamlit run app.py
 - **Topics**: 5 discovered topics with coherence Cv = 0.4170
 - **Search**: Semantic similarity using all-MiniLM-L6-v2
 - **Classifier**: ~53% validation accuracy (vs 20% random baseline)
+- streamlit app allows to explore more topics and more than 2000 papers can be used for topic modeling, semantic search and NN classification tasks
