@@ -14,16 +14,16 @@ import numpy as np
 
 # Page Config
 st.set_page_config(
-    page_title="ArXiv Topic Analyzer",
+    page_title="Search Engine for Educational/Research Topics",
     page_icon="📚",
     layout="wide"
 )
 
 # Title and Description
-st.title("🧠 Intelligent Research Assistant")
+st.title("Search Engine for Educational/Research Topics")
 st.markdown("""
 This application allows you to explore academic papers from ArXiv using **Topic Modeling (LDA)** and **Semantic Search**.
-It demonstrates advanced NLP techniques including:
+It demonstrates NLP techniques including:
 - **Latent Dirichlet Allocation (LDA)** for discovering hidden topics.
 - **Sentence Transformers** for semantic understanding and search.
 """)
