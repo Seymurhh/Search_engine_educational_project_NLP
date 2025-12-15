@@ -103,9 +103,6 @@ def save_to_csv(df, filepath="arxiv_dataset.csv"):
     Saves the dataframe to a CSV file.
     """
     if os.path.exists(filepath):
-        # Append if exists (optional, but for now let's overwrite or handle duplicates)
-        # For simplicity in this project, we will overwrite or load-then-append
-        # Let's just overwrite for the "current session" dataset
         df.to_csv(filepath, index=False)
     else:
         df.to_csv(filepath, index=False)
