@@ -20,10 +20,10 @@ st.set_page_config(
 )
 
 # Title and Description
-st.title("🧠 Intelligent Research Assistant")
+st.title("Research Assistant")
 st.markdown("""
 This application allows you to explore academic papers from ArXiv using **Topic Modeling (LDA)** and **Semantic Search**.
-It demonstrates advanced NLP techniques including:
+It demonstrates NLP techniques including:
 - **Latent Dirichlet Allocation (LDA)** for discovering hidden topics.
 - **Sentence Transformers** for semantic understanding and search.
 """)
@@ -35,7 +35,7 @@ st.sidebar.header("Configuration")
 st.sidebar.subheader("Data Source")
 data_source = st.sidebar.radio("Select Source", ["Fetch from ArXiv API", "Load Local Dataset"])
 
-if data_source == "Fetch from ArXiv API":
+if data_source == "Fetch from ArXiv":
     query = st.sidebar.text_input("ArXiv Query", value="cat:cs.RO OR cat:cs.AI")
     max_results = st.sidebar.slider("Max Papers", 100, 2000, 500)
 else:
@@ -47,7 +47,7 @@ num_topics = st.sidebar.slider("Number of Topics", 2, 20, 5)
 
 # Load Data
 with st.spinner("Processing data..."):
-    if data_source == "Fetch from ArXiv API":
+    if data_source == "Fetch from ArXiv":
         df = data_loader.fetch_arxiv_papers(query=query, max_results=max_results)
         if not df.empty:
             # Save to local corpus
