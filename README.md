@@ -40,5 +40,5 @@ streamlit run app.py
 
 - **Topics**: 5 discovered topics with coherence Cv = 0.4170
 - **Search**: Semantic similarity using all-MiniLM-L6-v2
-- **Classifier**: ~53% validation accuracy (vs 20% random baseline)
+- **Classifier**: ~78% validation accuracy (vs 20% random baseline)
 - streamlit app allows to explore more topics and more than 2000 papers can be used for topic modeling, semantic search and NN classification tasks
